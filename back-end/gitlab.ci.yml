@@ -1,0 +1,33 @@
+stages:
+  - test
+  - lint
+  - audit
+  - build
+
+ 
+
+unit_test:
+  stage: test
+  script:
+    - npm run test
+
+ 
+
+linting:
+  stage: lint
+  script:
+    - npm run lint
+
+ 
+
+audit:
+  stage: audit
+  script:
+    - npm run audit
+
+ 
+
+build:
+  stage: build
+  script:
+    - npm run build
