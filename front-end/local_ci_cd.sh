@@ -6,4 +6,4 @@ npm run test:unit:coverage
 npm run audit
 
 
-scp -r ./dist/* sshuser@server::/var/www/html/
+scp -r ./dist/* sshuser@server:/var/www/html/
