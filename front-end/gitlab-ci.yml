@@ -1,0 +1,39 @@
+stages:
+  - test
+  - build
+  - deploy
+
+ 
+
+linting:
+  stage: test
+  script:
+    - npm run lint:js
+
+ 
+
+unit_tests:
+  stage: test
+  script:
+    - npm run test:unit
+
+ 
+
+audit:
+  stage: test
+  script:
+    - npm run audit
+
+ 
+
+build:
+  stage: build
+  script:
+    - ./build-client.sh
+
+ 
+
+deploy:
+  stage: deploy
+  script:
+    - scp -r ./dist/* sshuser@server::/var/www/html/
